@@ -12,6 +12,21 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    /* 
+    默认来说是单数复数命名法或者下划线命名法
+    及User模型调用的是users数据库
+    BlogPost模型调用的是blog_posts
+
+    此类的会默认调用
+
+    如果要单独命名，那么就单独设置
+
+    rotected $table = 'database';
+
+    */
+
+    protected $table = 'users';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -41,4 +56,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function gravatar($size = '100')
+    {
+        $hash = md5(strtolower(trim($this->attributes['email'])));
+        return "https://cdn.v2ex.com/gravatar/$hash?s=$size";
+    }
 }

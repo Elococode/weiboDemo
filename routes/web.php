@@ -9,3 +9,4 @@ Route::get('/about', 'StaticPagesController@about')->name('about');
 
 // Users
 Route::get('/signup', 'UsersController@create')->name('signup');
+Route::resource('/users', 'UsersController');
