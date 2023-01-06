@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-@section('title','主页')
+@section('title', '主页')
 
 @section('content')
     <div class="bg-light p-3 p-sm-5 rounded">
@@ -12,7 +12,7 @@
             一切从这里开始
         </p>
         <p>
-            <a href="#" class="btn btn-lg btn-success">现在注册</a>
+            <a href="{{ route('signup') }}" class="btn btn-lg btn-success">现在注册</a>
         </p>
     </div>
 @stop
