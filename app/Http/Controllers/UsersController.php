@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Composer;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -79,5 +80,11 @@ class UsersController extends Controller
 
         session()->flash('success', '您的信息已修改成功！');
         return redirect()->route('users.show', $user);
+    }
+
+    public function index()
+    {
+        $users = User::all();
+        return view('users.index',compact('users'));
     }
 }
