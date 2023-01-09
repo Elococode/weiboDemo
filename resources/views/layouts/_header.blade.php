@@ -5,11 +5,14 @@
         </a>
         <ul class="navbar-nav justify-content-end">
             @if (Auth::check())
+                @can('index', $user)
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('users.index') }}">
                         用户列表
                     </a>
                 </li>
+                @endcan
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
