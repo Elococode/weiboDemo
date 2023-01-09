@@ -28,17 +28,24 @@
                     </label>
                     <input type="password" class="form-control" name="password" value="{{ old('password') }}">
                 </div>
-
+                <div class="form-group">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" name="remember" id="exampleCheck1">
+                        <label for="exampleCheck1" class="form-check-label">
+                            记住我
+                        </label>
+                    </div>
+                </div>
                 <button class="btn btn-primary" type="submit">
                     登陆
                 </button>
 
-                <hr>
-                
-                <p>
-                    还没帐号？<a href="{{ route('signup') }}">现在注册！</a>
-                </p>
             </form>
+            <hr>
+            <p>
+                还没帐号？<a href="{{ route('signup') }}">现在注册！</a>
+            </p>
+
         </div>
     </div>
 @endsection
