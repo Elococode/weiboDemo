@@ -19,7 +19,7 @@
                         <a class="dropdown-item" href="{{ route('users.show', Auth::user()) }}">
                             个人中心
                         </a>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="{{ route('users.edit', Auth::user()) }}">
                             编辑资料
                         </a>
                         <div class="dropdown-divider"></div>
