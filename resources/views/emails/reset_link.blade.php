@@ -12,7 +12,7 @@
     <p>
         请点击以下链接进入下一步操作：
         <a href="{{ route('password.reset', $token) }}">
-            route('password.reset', $token)
+            {{ route('password.reset', $token) }}
         </a>
     </p>
 
