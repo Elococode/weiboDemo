@@ -26,6 +26,11 @@ class UsersController extends Controller
                 'create',
             ]
         ]);
+
+        // 限流 一个小时内只能提交 10 次请求；
+        $this->middleware('throttle:10,60', [
+            'only' => ['store']
+        ]);
     }
 
     public function create()
@@ -52,7 +57,7 @@ class UsersController extends Controller
             'password' => bcrypt($request->password),
         ]);
         $this->sendComfirmatonEmailTo($user);
-        
+
         // 之后我们可以使用 session()->get('success') 通过键名来取出对应会话中的数据，取出的结果为 欢迎，您将在这里开启一段新的旅程~。
         session()->flash('success', '验证邮件已发送到你的注册邮箱上，请注意查收。');
 
@@ -115,7 +120,7 @@ class UsersController extends Controller
 
     public function confirmEmail($token)
     {
-        
+
         if (User::where('activation_token', $token)->exists()) {
             $user = User::where('activation_token', $token)->first();
             $user->activated = true;

@@ -20,7 +20,7 @@ Route::delete('/logout', 'SessionsController@destroy')->name('logout');
 Route::get('signup/confirm/{token}','UsersController@confirmEmail')->name('confirm_email');
 
 // Reset password
-Route::get('password/reset','PasswordController@showLinkRequestFrom')->name('password.request');
+Route::get('password/reset','PasswordController@showLinkRequestForm')->name('password.request');
 Route::post('password/email','PasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}','PasswordController@showRequestForm')->name('password.reset');
 Route::post('password/reset','PasswordController@reset')->name('password.update');
