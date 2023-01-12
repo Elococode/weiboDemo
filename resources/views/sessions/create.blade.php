@@ -24,7 +24,7 @@
 
                 <div class="mb-3">
                     <label for="password">
-                        密码：
+                        密码：（<a href="{{ route('password.request') }}">忘记密码</a>）
                     </label>
                     <input type="password" class="form-control" name="password" value="{{ old('password') }}">
                 </div>

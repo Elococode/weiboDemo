@@ -3,22 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
 
 class StaticPagesController extends Controller
 {
-    public function home(User $user)
+    public function home()
     {
-        return view('static_pages/home', compact('user'));
+        return view('static_pages/home');
     }
 
-    public function help(User $user)
+    public function help()
     {
-        return view('static_pages/help', compact('user'));
+        return view('static_pages/help');
     }
 
-    public function about(User $user)
+    public function about()
     {
-        return view('static_pages/about', compact('user'));
+        return view('static_pages/about');
     }
 }

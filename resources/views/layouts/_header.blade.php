@@ -5,7 +5,7 @@
         </a>
         <ul class="navbar-nav justify-content-end">
             @if (Auth::check())
-                @can('index', $user)
+                @can('index', Auth::user())
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('users.index') }}">
                         用户列表

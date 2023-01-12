@@ -52,6 +52,7 @@ class UsersController extends Controller
             'password' => bcrypt($request->password),
         ]);
         $this->sendComfirmatonEmailTo($user);
+        
         // 之后我们可以使用 session()->get('success') 通过键名来取出对应会话中的数据，取出的结果为 欢迎，您将在这里开启一段新的旅程~。
         session()->flash('success', '验证邮件已发送到你的注册邮箱上，请注意查收。');
 
