@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\Status;
 use Illuminate\Support\Facades\Auth;
 
-
 class StatusesController extends Controller
 {
     public function __construct()

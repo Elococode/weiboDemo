@@ -41,7 +41,7 @@ class UsersController extends Controller
     public function show(User $user)
     {
         $this->authorize('view', $user);
-        $statuses = $user->statuses()->orderBy('created_at', 'desc')->paginate(30);
+        $statuses = $user->feed()->paginate(30);
         return view('users.show', compact('user', 'statuses'));
     }
 
